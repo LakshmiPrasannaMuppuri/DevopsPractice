@@ -31,5 +31,7 @@ change url in place of download's use zip-templates & .zip
         apt install unzip
 
 Step 5:- Run the nginx container with downloaded website
-        docker run -ti-d -p 80:80 -v /root/technology:/usr/share/nginx/htil nginx
+        docker run -it -d -p 80:80 -v /root/technology:/usr/share/nginx/htil nginx
+        docker run -it -d -p 80:80 -v /root/2153_fireworks_composer:/usr/share/nginx/htil nginx
+
 Step 6 :- Go to IP address:80 and verify

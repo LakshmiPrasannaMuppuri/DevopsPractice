@@ -13,14 +13,23 @@ Create website with DevOps Tools
 Step 1: 1:- Go to any cloud provider GCP/AWS/Azure/etc
 Step 2 :- Create Virtual machine
 Step 3:- install docker
+
         sudo -i
         apt-get update
         apt install docker.io
         docker -v
-Step 4:- Download website from https://www.tooplate.com/free-templates change url in place of download's use zip-templates & .zip
-        wget https://www.tooplate.com/zip-templates/2142_cloud_sync.zip https://www.tooplate.com/zip-templates/2140_stellaris_research.zip
+
+Step 4:- Download website from https://www.tooplate.com/free-templates 
+
+change url in place of download's use zip-templates & .zip
+        wget https://www.tooplate.com/zip-templates/2142_cloud_sync.zip 
+        https://www.tooplate.com/zip-templates/2140_stellaris_research.zip
+
+        wget https://www.tooplate.com/zip-templates/2153_fireworks_composer.zip
+        
         wget
         apt install unzip
+
 Step 5:- Run the nginx container with downloaded website
         docker run -ti-d -p 80:80 -v /root/technology:/usr/share/nginx/htil nginx
 Step 6 :- Go to IP address:80 and verify

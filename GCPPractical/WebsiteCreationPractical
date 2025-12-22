@@ -34,4 +34,7 @@ Step 5:- Run the nginx container with downloaded website
         docker run -it -d -p 80:80 -v /root/technology:/usr/share/nginx/htil nginx
         docker run -it -d -p 80:80 -v /root/2153_fireworks_composer:/usr/share/nginx/htil nginx
 
+docker run -d --restart unless-stopped --name win11react -p 3000:3000 blueedge/win11react:latest
+docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+
 Step 6 :- Go to IP address:80 and verify

@@ -1,0 +1,211 @@
+lakshmiprasannamuppuri4@myfirstinstance:~$ sudo -i
+root@myfirstinstance:~# apt-get update &&
+        apt install docker.io
+        docker -v
+Hit:1 http://us-central1.gce.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates InRelease                                 
+Hit:3 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-backports InRelease                               
+Hit:4 https://packages.cloud.google.com/apt google-cloud-ops-agent-noble-2 InRelease                           
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease                                               
+Reading package lists... Done
+Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1795 (apt-get)... Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1795 (apt-get)      
+Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1795 (apt-get)... Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 1795 (apt-get)      
+Reading package lists... Done                                                                               
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools cgroupfs-mount | cgroup-lite debootstrap docker-buildx docker-compose-v2 docker-doc
+  rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd dns-root-data dnsmasq-base docker.io pigz runc ubuntu-fan
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 76.0 MB of archives.
+After this operation, 288 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://us-central1.gce.archive.ubuntu.com/ubuntu noble/universe amd64 pigz amd64 2.8-1 [65.6 kB]
+Get:2 http://us-central1.gce.archive.ubuntu.com/ubuntu noble/main amd64 bridge-utils amd64 1.7.1-1ubuntu2 [33.9 kB]
+Get:3 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/main amd64 runc amd64 1.3.3-0ubuntu1~24.04.3 [8815 kB]
+Get:4 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/main amd64 containerd amd64 1.7.28-0ubuntu1~24.04.1 [38.4 MB]
+Get:5 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/main amd64 dns-root-data all 2024071801~ubuntu0.24.04.1 [5918 B]
+Get:6 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/main amd64 dnsmasq-base amd64 2.90-2ubuntu0.1 [376 kB]
+Get:7 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/universe amd64 docker.io amd64 28.2.2-0ubuntu1~24.04.1 [28.3 MB]
+Get:8 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/universe amd64 ubuntu-fan all 0.12.16+24.04.1 [34.2 kB]
+Fetched 76.0 MB in 2s (31.6 MB/s)    
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 72144 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.8-1_amd64.deb ...
+Unpacking pigz (2.8-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.7.1-1ubuntu2_amd64.deb ...
+Unpacking bridge-utils (1.7.1-1ubuntu2) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.3.3-0ubuntu1~24.04.3_amd64.deb ...
+Unpacking runc (1.3.3-0ubuntu1~24.04.3) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.7.28-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking containerd (1.7.28-0ubuntu1~24.04.1) ...
+Selecting previously unselected package dns-root-data.
+Preparing to unpack .../4-dns-root-data_2024071801~ubuntu0.24.04.1_all.deb ...
+Unpacking dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Selecting previously unselected package dnsmasq-base.
+Preparing to unpack .../5-dnsmasq-base_2.90-2ubuntu0.1_amd64.deb ...
+Unpacking dnsmasq-base (2.90-2ubuntu0.1) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../6-docker.io_28.2.2-0ubuntu1~24.04.1_amd64.deb ...
+Unpacking docker.io (28.2.2-0ubuntu1~24.04.1) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../7-ubuntu-fan_0.12.16+24.04.1_all.deb ...
+Unpacking ubuntu-fan (0.12.16+24.04.1) ...
+Setting up dnsmasq-base (2.90-2ubuntu0.1) ...
+Setting up runc (1.3.3-0ubuntu1~24.04.3) ...
+Setting up dns-root-data (2024071801~ubuntu0.24.04.1) ...
+Setting up bridge-utils (1.7.1-1ubuntu2) ...
+Setting up pigz (2.8-1) ...
+Setting up containerd (1.7.28-0ubuntu1~24.04.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/containerd.service → /usr/lib/systemd/system/containerd.service.
+Setting up ubuntu-fan (0.12.16+24.04.1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /usr/lib/systemd/system/ubuntu-fan.service.
+Setting up docker.io (28.2.2-0ubuntu1~24.04.1) ...
+info: Selecting GID from range 100 to 999 ...
+info: Adding group `docker' (GID 113) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/docker.service → /usr/lib/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /usr/lib/systemd/system/docker.socket.
+Processing triggers for dbus (1.14.10-4ubuntu4.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                                           
+Scanning linux images...                                                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Docker version 28.2.2, build 28.2.2-0ubuntu1~24.04.1
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# wget https://www.tooplate.com/zip-templates/2153_fireworks_composer.zip
+--2025-12-22 09:06:50--  https://www.tooplate.com/zip-templates/2153_fireworks_composer.zip
+Resolving www.tooplate.com (www.tooplate.com)... 72.52.176.250
+Connecting to www.tooplate.com (www.tooplate.com)|72.52.176.250|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 7928 (7.7K) [application/zip]
+Saving to: ‘2153_fireworks_composer.zip’
+
+2153_fireworks_composer.zip             100%[===============================================================================>]   7.74K  --.-KB/s    in 0s      
+
+2025-12-22 09:06:50 (58.2 MB/s) - ‘2153_fireworks_composer.zip’ saved [7928/7928]
+
+root@myfirstinstance:~# ls
+2153_fireworks_composer.zip
+root@myfirstinstance:~# unzip 2153_fireworks_composer.zip 
+Command 'unzip' not found, but can be installed with:
+apt install unzip
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# apt install unzip
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 174 kB of archives.
+After this operation, 384 kB of additional disk space will be used.
+Get:1 http://us-central1.gce.archive.ubuntu.com/ubuntu noble-updates/main amd64 unzip amd64 6.0-28ubuntu4.1 [174 kB]
+Fetched 174 kB in 0s (5737 kB/s)
+Selecting previously unselected package unzip.
+(Reading database ... 72511 files and directories currently installed.)
+Preparing to unpack .../unzip_6.0-28ubuntu4.1_amd64.deb ...
+Unpacking unzip (6.0-28ubuntu4.1) ...
+Setting up unzip (6.0-28ubuntu4.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                                                                                           
+Scanning linux images...                                                                                                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# unzip 2153_fireworks_composer.zip 
+Archive:  2153_fireworks_composer.zip
+   creating: 2153_fireworks_composer/
+  inflating: 2153_fireworks_composer/index.html  
+  inflating: 2153_fireworks_composer/tooplate-fireworks-composer.js  
+  inflating: 2153_fireworks_composer/tooplate-fireworks-style.css  
+  inflating: 2153_fireworks_composer/ABOUT THIS TEMPLATE.txt  
+root@myfirstinstance:~# ls
+2153_fireworks_composer  2153_fireworks_composer.zip
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# docker run -it -d -p 80:80 -v /root/2153_fireworks_composer:/usr/share/nginx/htil nginx
+Unable to find image 'nginx:latest' locally
+latest: Pulling from library/nginx
+1733a4cd5954: Pull complete 
+5b219a92f92a: Pull complete 
+ee3a09d2248a: Pull complete 
+7382b41547b8: Pull complete 
+9ee60c6c0558: Pull complete 
+114e699da838: Pull complete 
+5b5fa0b64d74: Pull complete 
+Digest: sha256:fb01117203ff38c2f9af91db1a7409459182a37c87cced5cb442d1d8fcc66d19
+Status: Downloaded newer image for nginx:latest
+edb86248274bb40b0946e783bad687d90ee7677f2c4bc916dc8ba18c3aa4d4c5
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# docker run -d --restart unless-stopped --name win11react -p 3000:3000 blueedge/win11react:latest
+Unable to find image 'blueedge/win11react:latest' locally
+latest: Pulling from blueedge/win11react
+8663204ce13b: Pull complete 
+745df77ce769: Pull complete 
+2d9f4f3c81e3: Pull complete 
+b9d625f5e56f: Pull complete 
+9492bf4b3884: Pull complete 
+0975b3e08d73: Pull complete 
+8bdcf6d12764: Pull complete 
+eb9777f4c1fc: Pull complete 
+Digest: sha256:7d2c04694c9b610d34bc06fe8d720dca1ce13732d065944a6475c881400f7599
+Status: Downloaded newer image for blueedge/win11react:latest
+796ba4ef4a51e48f38c23da6a7c61d49e3107a0136e11b1985728a899798f452
+root@myfirstinstance:~# docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+Unable to find image 'jenkins/jenkins:latest' locally
+latest: Pulling from jenkins/jenkins
+13cc39f8244a: Pull complete 
+d179478957b3: Pull complete 
+4fb95731d558: Pull complete 
+6e01068ac11c: Pull complete 
+0198a111cfe9: Pull complete 
+c5909808b338: Pull complete 
+f6dceacd98e0: Pull complete 
+6e42455a1fdc: Pull complete 
+f7f91e7c873b: Pull complete 
+ff77ec541687: Pull complete 
+ac5e9b48c74e: Pull complete 
+3ae5e9f08da1: Pull complete 
+Digest: sha256:033f835603b584d220123ffaeffaac88f98cce10027ecb092b21ddf60030f297
+Status: Downloaded newer image for jenkins/jenkins:latest
+1e3885d07130cd37d54024313baf4ef448f6e0ed0a3f6320c889a23de9947899
+root@myfirstinstance:~# 
+root@myfirstinstance:~# 
+root@myfirstinstance:~# docker ps
+CONTAINER ID   IMAGE                        COMMAND                  CREATED             STATUS             PORTS                                                    NAMES
+1e3885d07130   jenkins/jenkins:latest       "/usr/bin/tini -- /u…"   4 minutes ago       Up 4 minutes       0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp, 50000/tcp   modest_ramanujan
+796ba4ef4a51   blueedge/win11react:latest   "serve /usr/src/wind…"   5 minutes ago       Up 5 minutes       0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp              win11react
+edb86248274b   nginx                        "/docker-entrypoint.…"   About an hour ago   Up About an hour   0.0.0.0:80->80/tcp, [::]:80->80/tcp                      magical_elbakyan
+root@myfirstinstance:~# 
+root@myfirstinstance:~#

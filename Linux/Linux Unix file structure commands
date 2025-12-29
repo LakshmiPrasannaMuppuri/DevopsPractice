@@ -1,0 +1,50 @@
+/bin  -  Essential command binaries
+/boot  -  System boot loader files
+/dev  -  Device files
+/etc  -  Host-specific system-wide configuration files
+/home  -  User home directory
+/lib  -  Shared library modules
+/media  -  Media file such as CD-ROM
+/mnt  -  Temporary mounted filesystems
+/opt  -  Add-on application software packages
+/proc  -  Automatically generated file system
+/root  -  Home directory for root user
+/run  -  Run-time program data
+/sbin  -  System binaries
+/srv  -  Site-specific data served by this system
+/sys  -  Virtual directory providing information about the syste
+/tmp  -  Temporary files
+/usr  -  Read-only user files
+/var  -  File that is expected to continuously change
+
+
+
+
+
+lakshmiprasannamuppuri4@linuxpractical:~$ ls
+lakshmiprasannamuppuri4@linuxpractical:~$ cd /
+lakshmiprasannamuppuri4@linuxpractical:/$ ls
+bin                boot  etc   lib                lib64       media  opt   root  sbin                snap  sys  usr
+bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
+lakshmiprasannamuppuri4@linuxpractical:/$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       8.7G  3.0G  5.7G  35% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           783M  1.1M  782M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+efivarfs         56K   24K   27K  48% /sys/firmware/efi/efivars
+/dev/sda16      881M   65M  755M   8% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           392M   12K  392M   1% /run/user/1001
+lakshmiprasannamuppuri4@linuxpractical:/$ pwd
+/
+lakshmiprasannamuppuri4@linuxpractical:/$ touch text
+touch: cannot touch 'text': Permission denied
+lakshmiprasannamuppuri4@linuxpractical:/$ sudo -i
+root@linuxpractical:~# ls
+root@linuxpractical:~# cd /
+root@linuxpractical:/# ls
+bin                boot  etc   lib                lib64       media  opt   root  sbin                snap  sys  usr
+bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
+root@linuxpractical:/# cd /tmp/
+root@linuxpractical:/tmp# 

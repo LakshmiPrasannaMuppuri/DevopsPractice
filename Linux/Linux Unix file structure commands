@@ -48,3 +48,76 @@ bin                boot  etc   lib                lib64       media  opt   root 
 bin.usr-is-merged  dev   home  lib.usr-is-merged  lost+found  mnt    proc  run   sbin.usr-is-merged  srv   tmp  var
 root@linuxpractical:/# cd /tmp/
 root@linuxpractical:/tmp# 
+root@linuxpractical:/tmp# touch prasanna
+root@linuxpractical:/tmp# ls
+prasanna                                                                systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+snap-private-tmp                                                        systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+ssh-GzHbSUlEH3                                                          systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+root@linuxpractical:/tmp# cp prasanna lakshmi
+root@linuxpractical:/tmp# ls
+lakshmi           systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+prasanna          systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+snap-private-tmp  systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+ssh-GzHbSUlEH3    systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+root@linuxpractical:/tmp# mv prasanna Prasanna
+root@linuxpractical:/tmp# ls
+Prasanna          systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+lakshmi           systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+snap-private-tmp  systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+ssh-GzHbSUlEH3    systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+root@linuxpractical:/tmp# 
+root@linuxpractical:/tmp# mkdir Prasanna
+mkdir: cannot create directory ‘Prasanna’: File exists
+root@linuxpractical:/tmp# mkdir Prasanna1
+root@linuxpractical:/tmp# ls
+Prasanna          systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+Prasanna1         systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+lakshmi           systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+snap-private-tmp  systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+ssh-GzHbSUlEH3
+root@linuxpractical:/tmp# ls -l
+total 28
+-rw-r--r-- 1 root                    root                       0 Dec 29 08:07 Prasanna
+drwxr-xr-x 2 root                    root                    4096 Dec 29 08:09 Prasanna1
+-rw-r--r-- 1 root                    root                       0 Dec 29 08:07 lakshmi
+drwx------ 2 root                    root                    4096 Dec 29 06:52 snap-private-tmp
+drwx------ 2 lakshmiprasannamuppuri4 lakshmiprasannamuppuri4 4096 Dec 29 07:03 ssh-GzHbSUlEH3
+drwx------ 3 root                    root                    4096 Dec 29 06:52 systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+drwx------ 3 root                    root                    4096 Dec 29 06:52 systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+drwx------ 3 root                    root                    4096 Dec 29 06:52 systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+drwx------ 3 root                    root                    4096 Dec 29 06:52 systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+root@linuxpractical:/tmp# 
+root@linuxpractical:/# cd /tmp/
+root@linuxpractical:/tmp# ls
+Prasanna          systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-chrony.service-GNJ4Uf
+Prasanna1         systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-polkit.service-3jtPzW
+lakshmi           systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-logind.service-hUrO75
+snap-private-tmp  systemd-private-4ac0c552fb6443768fa4797d39f5d5e0-systemd-resolved.service-jpUPWK
+ssh-TKHucR5tq6
+root@linuxpractical:/tmp# cd Prasanna1
+root@linuxpractical:/tmp/Prasanna1# ls
+root@linuxpractical:/tmp/Prasanna1# history
+    1  ls
+    2  cd /
+    3  ls
+    4  cd /tmp/
+    5  touch prasanna
+    6  ls
+    7  cp prasanna lakshmi
+    8  ls
+    9  mv prasanna Prasanna
+   10  ls
+   11  mkdir Prasanna
+   12  mkdir Prasanna1
+   13  ls
+   14  ls -l
+   15  ls
+   16  cd /
+   17  ls
+   18  cd /tmp/
+   19  ls
+   20  cd Prasanna1
+   21  ls
+   22  history
+root@linuxpractical:/tmp/Prasanna1# 

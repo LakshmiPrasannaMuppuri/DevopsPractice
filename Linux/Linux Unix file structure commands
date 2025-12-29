@@ -121,3 +121,182 @@ root@linuxpractical:/tmp/Prasanna1# history
    21  ls
    22  history
 root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# touch text
+root@linuxpractical:/tmp/Prasanna1# ls
+text
+root@linuxpractical:/tmp/Prasanna1# vi text
+root@linuxpractical:/tmp/Prasanna1# vi text
+root@linuxpractical:/tmp/Prasanna1# cat text
+Crack High Package Jobs
+With CloudDevOpsHub
+Transform your career in just 55 days with 100% live, interactive sessions. Master AWS + Azure + GCP + DevOps + AI and land 15-40+ LPA roles at top MNCs.
+root@linuxpractical:/tmp/Prasanna1# vi text
+root@linuxpractical:/tmp/Prasanna1# more text
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# hostname
+linuxpractical
+root@linuxpractical:/tmp/Prasanna1# hostname -i
+10.128.0.5
+root@linuxpractical:/tmp/Prasanna1# curl ifconfig.me
+35.239.127.159root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# uname
+Linux
+root@linuxpractical:/tmp/Prasanna1# uname -a
+Linux linuxpractical 6.14.0-1021-gcp #22~24.04.1-Ubuntu SMP Sat Nov 22 06:23:18 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root@linuxpractical:/tmp/Prasanna1# free -h
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       506Mi       2.6Gi       1.0Mi       970Mi       3.3Gi
+Swap:             0B          0B          0B
+root@linuxpractical:/tmp/Prasanna1# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       8.7G  3.0G  5.7G  35% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           783M  1.1M  782M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+efivarfs         56K   24K   27K  48% /sys/firmware/efi/efivars
+/dev/sda16      881M   65M  755M   8% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           392M   12K  392M   1% /run/user/1001
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+top - 11:12:03 up  4:19,  1 user,  load average: 0.00, 0.00, 0.03
+Tasks: 115 total,   1 running, 114 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.5 us,  0.2 sy,  0.0 ni, 99.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+top - 11:13:45 up  4:21,  1 user,  load average: 0.05, 0.02, 0.03
+Tasks: 115 total,   1 running, 114 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.0 sy,  0.0 ni,100.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3913.2 total,   2664.0 free,    508.7 used,    970.1 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3404.5 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                  
+      1 root      20   0   22872  14288   9628 S   0.0   0.4   0:07.94 systemd                                                                                  
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.01 kthreadd                                                                                 
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                                   
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                         
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                        
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                             
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                   
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                          
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri                                                              
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                   
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread                                                                   
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread                                                                  
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.39 ksoftirqd/0                                                                              
+     17 root      20   0       0      0      0 I   0.0   0.0   0:03.48 rcu_sched                                                                                
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0                                                          
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker                                                                
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:00.11 migration/0                                                                              
+     21 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                                            
+     22 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                                                                                  
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1                                                                                  
+     24 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1                                                                            
+     25 root      rt   0       0      0      0 S   0.0   0.0   0:00.50 migration/1                                                                              
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.43 ksoftirqd/1                                                                              
+     28 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/1:0H-events_highpri                                                              
+     29 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kdevtmpfs                                                                                
+     30 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-inet_frag_wq                                                                   
+     31 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kauditd                                                                                  
+     32 root      20   0       0      0      0 S   0.0   0.0   0:00.00 khungtaskd                                                                               
+     33 root      20   0       0      0      0 S   0.0   0.0   0:00.00 oom_reaper                                                                               
+root@linuxpractical:/tmp/Prasanna1#
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# htop
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# who
+lakshmiprasannamuppuri4 pts/0        2025-12-29 10:50 (35.235.244.34)
+lakshmiprasannamuppuri4 pts/1        2025-12-29 10:50 (35.235.244.34)
+root@linuxpractical:/tmp/Prasanna1# w
+ 11:17:15 up  4:25,  1 user,  load average: 0.00, 0.00, 0.01
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU  WHAT
+lakshmip          35.235.244.34    10:50    4:23m  0.00s  0.03s sshd: lakshmiprasannamuppuri4 [priv]
+root@linuxpractical:/tmp/Prasanna1# whoami
+root
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# man
+What manual page do you want?
+For example, try 'man man'.
+root@linuxpractical:/tmp/Prasanna1# man man
+man: can't resolve man7/groff_man.7
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# man w
+root@linuxpractical:/tmp/Prasanna1# uptime
+ 11:20:45 up  4:28,  1 user,  load average: 0.05, 0.02, 0.00
+root@linuxpractical:/tmp/Prasanna1# cat /etc/os-release
+PRETTY_NAME="Ubuntu 24.04.3 LTS"
+NAME="Ubuntu"
+VERSION_ID="24.04"
+VERSION="24.04.3 LTS (Noble Numbat)"
+VERSION_CODENAME=noble
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=noble
+LOGO=ubuntu-logo
+root@linuxpractical:/tmp/Prasanna1# 
+
+
+
+
+root@linuxpractical:/tmp/Prasanna1# history
+   1  ls
+    2  cd /
+    3  ls
+    4  cd /tmp/
+    5  touch prasanna
+    6  ls
+    7  cp prasanna lakshmi
+    8  ls
+    9  mv prasanna Prasanna
+   10  ls
+   11  mkdir Prasanna
+   12  mkdir Prasanna1
+   13  ls
+   14  ls -l
+   15  ls
+   16  cd /
+   17  ls
+   18  cd /tmp/
+   19  ls
+   20  cd Prasanna1
+   21  ls
+   22  history
+   23  cat text
+   24  touch text
+   25  ls
+   26  vi text
+   27  cat text
+   28  vi text
+   29  more text
+   30  hostname
+   31  hostname -i
+   32  curl ifconfig.me
+   33  uname
+   34  uname -a
+   35  free -h
+   36  df -h
+   37  top
+   38  htop
+   39  top
+   40  history
+   41  who
+   42  w
+   43  whoami
+   44  man
+   45  man man
+   46  man w
+   47  uptime
+   48  history
+   49  cat /etc/os-release
+   50  history
+root@linuxpractical:/tmp/Prasanna1# 
+root@linuxpractical:/tmp/Prasanna1# 

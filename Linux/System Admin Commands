@@ -1,0 +1,375 @@
+lakshmiprasannamuppuri4@linuxpractical:~$ sudo -i
+root@linuxpractical:~# uname -a
+Linux linuxpractical 6.14.0-1021-gcp #22~24.04.1-Ubuntu SMP Sat Nov 22 06:23:18 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+root@linuxpractical:~# top
+top - 15:16:53 up 1 min,  1 user,  load average: 0.91, 0.41, 0.15
+Tasks: 118 total,   1 running, 117 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.4 us,  0.1 sy,  0.0 ni, 99.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3913.2 total,   2408.4 free,    512.5 used,   1224.9 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   3400.7 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                  
+   1937 root      20   0 1182968  22264  13536 S   1.2   0.6   0:00.32 fluent-bit                                                                               
+    368 systemd+  20   0   21712  13024  10616 S   0.1   0.3   0:00.25 systemd-resolve                                                                          
+   1761 lakshmi+  20   0   14968   7084   5116 S   0.1   0.2   0:00.01 sshd                                                                                     
+      1 root      20   0   22716  14024   9644 S   0.0   0.3   0:03.36 systemd                                                                                  
+      2 root      20   0       0      0      0 S   0.0   0.0   0:00.00 kthreadd                                                                                 
+      3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release                                                                   
+      4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_gp                                                                         
+      5 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-sync_wq                                                                        
+      6 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-kvfree_rcu_reclaim                                                             
+      7 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-slub_flushwq                                                                   
+      8 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-netns                                                                          
+      9 root      20   0       0      0      0 I   0.0   0.0   0:00.03 kworker/0:0-cgroup_destroy                                                               
+     10 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/0:0H-events_highpri                                                              
+     11 root      20   0       0      0      0 I   0.0   0.0   0:00.00 kworker/0:1-events                                                                       
+     12 root      20   0       0      0      0 I   0.0   0.0   0:00.14 kworker/u8:0-flush-8:0                                                                   
+     13 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-mm_percpu_wq                                                                   
+     14 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_rude_kthread                                                                   
+     15 root      20   0       0      0      0 I   0.0   0.0   0:00.00 rcu_tasks_trace_kthread                                                                  
+     16 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/0                                                                              
+     17 root      20   0       0      0      0 I   0.0   0.0   0:00.14 rcu_sched                                                                                
+     18 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_par_gp_kthread_worker/0                                                          
+     19 root      20   0       0      0      0 S   0.0   0.0   0:00.00 rcu_exp_gp_kthread_worker                                                                
+     20 root      rt   0       0      0      0 S   0.0   0.0   0:00.00 migration/0                                                                              
+     21 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/0                                                                            
+     22 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/0                                                                                  
+     23 root      20   0       0      0      0 S   0.0   0.0   0:00.00 cpuhp/1                                                                                  
+     24 root     -51   0       0      0      0 S   0.0   0.0   0:00.00 idle_inject/1                                                                            
+     25 root      rt   0       0      0      0 S   0.0   0.0   0:00.36 migration/1                                                                              
+     26 root      20   0       0      0      0 S   0.0   0.0   0:00.03 ksoftirqd/1                                                                              
+root@linuxpractical:~# ps
+    PID TTY          TIME CMD
+   1891 pts/2    00:00:00 sudo
+   1892 pts/2    00:00:00 bash
+   2017 pts/2    00:00:00 ps
+root@linuxpractical:~# ps -ef
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  3 15:15 ?        00:00:03 /sbin/init
+root           2       0  0 15:15 ?        00:00:00 [kthreadd]
+root           3       2  0 15:15 ?        00:00:00 [pool_workqueue_release]
+root           4       2  0 15:15 ?        00:00:00 [kworker/R-rcu_gp]
+root           5       2  0 15:15 ?        00:00:00 [kworker/R-sync_wq]
+root           6       2  0 15:15 ?        00:00:00 [kworker/R-kvfree_rcu_reclaim]
+root           7       2  0 15:15 ?        00:00:00 [kworker/R-slub_flushwq]
+root           8       2  0 15:15 ?        00:00:00 [kworker/R-netns]
+root           9       2  0 15:15 ?        00:00:00 [kworker/0:0-cgroup_destroy]
+root          10       2  0 15:15 ?        00:00:00 [kworker/0:0H-events_highpri]
+root          11       2  0 15:15 ?        00:00:00 [kworker/0:1-events]
+root          12       2  0 15:15 ?        00:00:00 [kworker/u8:0-flush-8:0]
+root          13       2  0 15:15 ?        00:00:00 [kworker/R-mm_percpu_wq]
+root          14       2  0 15:15 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          15       2  0 15:15 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          16       2  0 15:15 ?        00:00:00 [ksoftirqd/0]
+root          17       2  0 15:15 ?        00:00:00 [rcu_sched]
+root          18       2  0 15:15 ?        00:00:00 [rcu_exp_par_gp_kthread_worker/0]
+root          19       2  0 15:15 ?        00:00:00 [rcu_exp_gp_kthread_worker]
+root          20       2  0 15:15 ?        00:00:00 [migration/0]
+root          21       2  0 15:15 ?        00:00:00 [idle_inject/0]
+root          22       2  0 15:15 ?        00:00:00 [cpuhp/0]
+root          23       2  0 15:15 ?        00:00:00 [cpuhp/1]
+root          24       2  0 15:15 ?        00:00:00 [idle_inject/1]
+root          25       2  0 15:15 ?        00:00:00 [migration/1]
+root          26       2  0 15:15 ?        00:00:00 [ksoftirqd/1]
+root          27       2  0 15:15 ?        00:00:00 [kworker/1:0-events]
+root          28       2  0 15:15 ?        00:00:00 [kworker/1:0H-events_highpri]
+root          29       2  0 15:15 ?        00:00:00 [kdevtmpfs]
+root          30       2  0 15:15 ?        00:00:00 [kworker/R-inet_frag_wq]
+root          31       2  0 15:15 ?        00:00:00 [kauditd]
+root          32       2  0 15:15 ?        00:00:00 [khungtaskd]
+root          33       2  0 15:15 ?        00:00:00 [kworker/u8:1-ext4-rsv-conversion]
+root          34       2  0 15:15 ?        00:00:00 [oom_reaper]
+root          35       2  0 15:15 ?        00:00:00 [kworker/u8:2-events_unbound]
+root          36       2  0 15:15 ?        00:00:00 [kworker/R-writeback]
+root          37       2  0 15:15 ?        00:00:00 [kcompactd0]
+root          38       2  0 15:15 ?        00:00:00 [ksmd]
+root          39       2  0 15:15 ?        00:00:00 [khugepaged]
+root          40       2  0 15:15 ?        00:00:00 [kworker/R-kintegrityd]
+root          41       2  0 15:15 ?        00:00:00 [kworker/R-kblockd]
+root          42       2  0 15:15 ?        00:00:00 [kworker/R-blkcg_punt_bio]
+root          43       2  0 15:15 ?        00:00:00 [irq/9-acpi]
+root          44       2  0 15:15 ?        00:00:00 [kworker/1:1-cgwb_release]
+root          45       2  0 15:15 ?        00:00:00 [kworker/R-tpm_dev_wq]
+root          46       2  0 15:15 ?        00:00:00 [kworker/R-ata_sff]
+root          47       2  0 15:15 ?        00:00:00 [kworker/R-md]
+root          48       2  0 15:15 ?        00:00:00 [kworker/R-md_bitmap]
+root          49       2  0 15:15 ?        00:00:00 [kworker/R-edac-poller]
+root          50       2  0 15:15 ?        00:00:00 [kworker/R-devfreq_wq]
+root          51       2  0 15:15 ?        00:00:00 [watchdogd]
+root          52       2  0 15:15 ?        00:00:00 [kworker/1:1H-kblockd]
+root          53       2  0 15:15 ?        00:00:00 [kswapd0]
+root          54       2  0 15:15 ?        00:00:00 [ecryptfs-kthread]
+root          55       2  0 15:15 ?        00:00:00 [kworker/R-kthrotld]
+root          56       2  0 15:15 ?        00:00:00 [kworker/R-acpi_thermal_pm]
+root          57       2  0 15:15 ?        00:00:00 [hwrng]
+root          58       2  0 15:15 ?        00:00:00 [scsi_eh_0]
+root          59       2  0 15:15 ?        00:00:00 [kworker/R-scsi_tmf_0]
+root          60       2  0 15:15 ?        00:00:00 [kworker/R-nvme-wq]
+root          61       2  0 15:15 ?        00:00:00 [kworker/R-nvme-reset-wq]
+root          62       2  0 15:15 ?        00:00:00 [kworker/R-nvme-delete-wq]
+root          63       2  0 15:15 ?        00:00:00 [kworker/R-nvme-auth-wq]
+root          64       2  0 15:15 ?        00:00:00 [kworker/0:1H-kblockd]
+root          65       2  0 15:15 ?        00:00:00 [kworker/R-mld]
+root          66       2  0 15:15 ?        00:00:00 [kworker/R-ipv6_addrconf]
+root          73       2  0 15:15 ?        00:00:00 [kworker/R-kstrp]
+root          74       2  0 15:15 ?        00:00:00 [kworker/0:2-cgroup_destroy]
+root          76       2  0 15:15 ?        00:00:00 [kworker/u9:0]
+root          89       2  0 15:15 ?        00:00:00 [kworker/R-charger_manager]
+root          90       2  0 15:15 ?        00:00:00 [jbd2/sda1-8]
+root          91       2  0 15:15 ?        00:00:00 [kworker/R-ext4-rsv-conversion]
+root         128       1  0 15:15 ?        00:00:00 /usr/lib/systemd/systemd-journald
+root         146       2  0 15:15 ?        00:00:00 [kworker/1:2-events]
+root         150       2  0 15:15 ?        00:00:00 [kworker/u8:3-events_power_efficient]
+root         154       2  0 15:15 ?        00:00:00 [kworker/R-kmpathd]
+root         155       2  0 15:15 ?        00:00:00 [kworker/R-kmpath_handlerd]
+root         156       2  0 15:15 ?        00:00:00 [kworker/1:3-cgwb_release]
+root         190       1  0 15:15 ?        00:00:00 /sbin/multipathd -d -s
+root         208       1  0 15:15 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root         209       2  0 15:15 ?        00:00:00 [psimon]
+root         271       2  0 15:15 ?        00:00:00 [kworker/R-cryptd]
+root         302       2  0 15:15 ?        00:00:00 [jbd2/sda16-8]
+root         303       2  0 15:15 ?        00:00:00 [kworker/R-ext4-rsv-conversion]
+systemd+     368       1  0 15:15 ?        00:00:00 /usr/lib/systemd/systemd-resolved
+systemd+     559       1  0 15:15 ?        00:00:00 /usr/lib/systemd/systemd-networkd
+message+     672       1  0 15:15 ?        00:00:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         676       1  0 15:15 ?        00:00:00 /usr/bin/google_osconfig_agent
+root         684       1  0 15:15 ?        00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+root         695       1  0 15:15 ?        00:00:00 /usr/lib/snapd/snapd
+syslog       748       1  0 15:15 ?        00:00:00 /usr/sbin/rsyslogd -n -iNONE
+root         799       1  0 15:15 ?        00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         916       1  0 15:15 ?        00:00:00 /usr/bin/google_guest_agent
+polkitd      917       1  0 15:15 ?        00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+root         918       1  0 15:15 ttyS0    00:00:00 /sbin/agetty -o -p -- \u --keep-baud 115200,57600,38400,9600 - vt220
+root         930       1  0 15:15 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear - linux
+_chrony      955       1  0 15:15 ?        00:00:00 /usr/sbin/chronyd -F 1
+_chrony      958     955  0 15:15 ?        00:00:00 /usr/sbin/chronyd -F 1
+root        1077       1  0 15:15 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root        1081       1  0 15:15 ?        00:00:00 /usr/sbin/cron -f -P
+root        1088       1  0 15:15 ?        00:00:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        1104       2  0 15:15 ?        00:00:00 [kworker/0:3-events]
+root        1561       1  0 15:16 ?        00:00:00 /usr/libexec/packagekitd
+root        1609       2  0 15:16 ?        00:00:00 [kworker/u8:4-flush-8:0]
+root        1628    1088  0 15:16 ?        00:00:00 sshd: lakshmiprasannamuppuri4 [priv]
+lakshmi+    1640       1  0 15:16 ?        00:00:00 /usr/lib/systemd/systemd --user
+lakshmi+    1641    1640  0 15:16 ?        00:00:00 (sd-pam)
+lakshmi+    1761    1628  0 15:16 ?        00:00:00 sshd: lakshmiprasannamuppuri4@pts/1
+lakshmi+    1764    1761  0 15:16 pts/1    00:00:00 -bash
+root        1811       2  0 15:16 ?        00:00:00 [kworker/R-tls-strp]
+root        1875       2  0 15:16 ?        00:00:00 [psimon]
+root        1890    1764  0 15:16 pts/1    00:00:00 sudo -i
+root        1891    1890  0 15:16 pts/2    00:00:00 sudo -i
+root        1892    1891  0 15:16 pts/2    00:00:00 -bash
+root        1922       1  0 15:16 ?        00:00:00 /opt/google-cloud-ops-agent/libexec/google_cloud_ops_agent_wrapper -config_path /etc/google-cloud-ops-agent/
+root        1928       1  1 15:16 ?        00:00:00 /opt/google-cloud-ops-agent/subagents/opentelemetry-collector/otelopscol --config=/run/google-cloud-ops-agen
+root        1937    1922  1 15:16 ?        00:00:00 /opt/google-cloud-ops-agent/subagents/fluent-bit/bin/fluent-bit --config /run/google-cloud-ops-agent-fluent-
+root        2021    1892  0 15:17 pts/2    00:00:00 ps -ef
+root@linuxpractical:~# ps -ef | grep rcu
+root           4       2  0 15:15 ?        00:00:00 [kworker/R-rcu_gp]
+root           6       2  0 15:15 ?        00:00:00 [kworker/R-kvfree_rcu_reclaim]
+root          14       2  0 15:15 ?        00:00:00 [rcu_tasks_rude_kthread]
+root          15       2  0 15:15 ?        00:00:00 [rcu_tasks_trace_kthread]
+root          17       2  0 15:15 ?        00:00:00 [rcu_sched]
+root          18       2  0 15:15 ?        00:00:00 [rcu_exp_par_gp_kthread_worker/0]
+root          19       2  0 15:15 ?        00:00:00 [rcu_exp_gp_kthread_worker]
+root        2025    1892  0 15:18 pts/2    00:00:00 grep --color=auto rcu
+root@linuxpractical:~# ps -ef | grep java
+root        2028    1892  0 15:18 pts/2    00:00:00 grep --color=auto java
+root@linuxpractical:~# uptime
+ 15:18:25 up 2 min,  1 user,  load average: 0.28, 0.31, 0.14
+root@linuxpractical:~# free
+               total        used        free      shared  buff/cache   available
+Mem:         4007088      502908     2486888        1044     1255496     3504180
+Swap:              0           0           0
+root@linuxpractical:~# free -g
+               total        used        free      shared  buff/cache   available
+Mem:               3           0           2           0           1           3
+Swap:              0           0           0
+root@linuxpractical:~# free -m
+               total        used        free      shared  buff/cache   available
+Mem:            3913         490        2428           1        1226        3422
+Swap:              0           0           0
+root@linuxpractical:~# free -h
+               total        used        free      shared  buff/cache   available
+Mem:           3.8Gi       490Mi       2.4Gi       1.0Mi       1.2Gi       3.3Gi
+Swap:             0B          0B          0B
+root@linuxpractical:~# df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root        9065864 3066968   5982512  34% /
+tmpfs            2003544       0   2003544   0% /dev/shm
+tmpfs             801420    1032    800388   1% /run
+tmpfs               5120       0      5120   0% /run/lock
+efivarfs              56      24        27  48% /sys/firmware/efi/efivars
+/dev/sda16        901520   65896    772496   8% /boot
+/dev/sda15        106832    6250    100582   6% /boot/efi
+tmpfs             400708      12    400696   1% /run/user/1001
+root@linuxpractical:~# df -g
+df: invalid option -- 'g'
+Try 'df --help' for more information.
+root@linuxpractical:~# df -m
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/root           8854  2996      5843  34% /
+tmpfs               1957     0      1957   0% /dev/shm
+tmpfs                783     2       782   1% /run
+tmpfs                  5     0         5   0% /run/lock
+efivarfs               1     1         1  48% /sys/firmware/efi/efivars
+/dev/sda16           881    65       755   8% /boot
+/dev/sda15           105     7        99   6% /boot/efi
+tmpfs                392     1       392   1% /run/user/1001
+root@linuxpractical:~# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       8.7G  3.0G  5.8G  34% /
+tmpfs           2.0G     0  2.0G   0% /dev/shm
+tmpfs           783M  1.1M  782M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+efivarfs         56K   24K   27K  48% /sys/firmware/efi/efivars
+/dev/sda16      881M   65M  755M   8% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           392M   12K  392M   1% /run/user/1001
+root@linuxpractical:~# du
+4       ./.config/procps
+8       ./.config
+4       ./.ssh
+24      .
+root@linuxpractical:~# ls
+root@linuxpractical:~# ping google.com
+PING google.com (64.233.179.139) 56(84) bytes of data.
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=1 ttl=115 time=2.08 ms
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=2 ttl=115 time=1.79 ms
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=3 ttl=115 time=1.73 ms
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=4 ttl=115 time=1.93 ms
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=5 ttl=115 time=1.84 ms
+64 bytes from om-in-f139.1e100.net (64.233.179.139): icmp_seq=6 ttl=115 time=1.82 ms
+^C
+--- google.com ping statistics ---
+6 packets transmitted, 6 received, 0% packet loss, time 5008ms
+rtt min/avg/max/mdev = 1.734/1.866/2.084/0.114 ms
+root@linuxpractical:~# 
+root@linuxpractical:~# touch prasanna
+root@linuxpractical:~# touch sunil.txt
+root@linuxpractical:~# 
+root@linuxpractical:~# ls
+prasanna  sunil.txt
+root@linuxpractical:~# locate *.txt
+Command 'locate' not found, but can be installed with:
+apt install plocate
+root@linuxpractical:~# apt install locate
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  locate
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 50.3 kB of archives.
+After this operation, 177 kB of additional disk space will be used.
+Get:1 http://us-central1.gce.archive.ubuntu.com/ubuntu noble/universe amd64 locate amd64 4.9.0-5build1 [50.3 kB]
+Fetched 50.3 kB in 2s (24.0 kB/s) 
+Selecting previously unselected package locate.
+(Reading database ... 72144 files and directories currently installed.)
+Preparing to unpack .../locate_4.9.0-5build1_amd64.deb ...
+Unpacking locate (4.9.0-5build1) ...
+Setting up locate (4.9.0-5build1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Scanning processes...                                                                                                                                           
+Scanning linux images...                                                                                                                                        
+
+Running kernel seems to be up-to-date.
+
+No services need to be restarted.
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+root@linuxpractical:~# locate *.txt
+root@linuxpractical:~# find *.txt
+sunil.txt
+root@linuxpractical:~# 
+root@linuxpractical:~# vi prasanna.sh
+root@linuxpractical:~# cat prasanna.sh
+hostname
+uname -a
+ps
+uptime
+free
+root@linuxpractical:~# ./prasanna.sh
+-bash: ./prasanna.sh: Permission denied
+root@linuxpractical:~# ls -l
+total 4
+-rw-r--r-- 1 root root  0 Dec 30 15:19 prasanna
+-rw-r--r-- 1 root root 33 Dec 30 15:22 prasanna.sh
+-rw-r--r-- 1 root root  0 Dec 30 15:19 sunil.txt
+root@linuxpractical:~# chmod +x prasanna.sh
+root@linuxpractical:~# ls -l
+total 4
+-rw-r--r-- 1 root root  0 Dec 30 15:19 prasanna
+-rwxr-xr-x 1 root root 33 Dec 30 15:22 prasanna.sh
+-rw-r--r-- 1 root root  0 Dec 30 15:19 sunil.txt
+root@linuxpractical:~# ./prasanna.sh
+linuxpractical
+Linux linuxpractical 6.14.0-1021-gcp #22~24.04.1-Ubuntu SMP Sat Nov 22 06:23:18 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+    PID TTY          TIME CMD
+   1891 pts/2    00:00:00 sudo
+   1892 pts/2    00:00:00 bash
+   2535 pts/2    00:00:00 bash
+   2538 pts/2    00:00:00 ps
+ 15:23:04 up 7 min,  1 user,  load average: 0.02, 0.15, 0.10
+               total        used        free      shared  buff/cache   available
+Mem:         4007088      530000     2431852        1044     1285144     3477088
+Swap:              0           0           0
+root@linuxpractical:~# ls
+prasanna  prasanna.sh  sunil.txt
+root@linuxpractical:~# pwd
+/root
+root@linuxpractical:~# 
+root@linuxpractical:~# ssh-keygen
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/root/.ssh/id_ed25519): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_ed25519
+Your public key has been saved in /root/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:cUQ5isAUuUfiKEKBAZVr1VeeOMOCmvNiIBGJmDaQqMU root@linuxpractical
+The key's randomart image is:
++--[ED25519 256]--+
+|%Oo+o+   o+.     |
+|O=E *.o..+o.     |
+|=..=.=.o*.+.     |
+|+.+oo o..=       |
+|+o+  .  S        |
+|.. o             |
+|  o .            |
+| . .             |
+|                 |
++----[SHA256]-----+
+root@linuxpractical:~# cd /root/.ssh
+root@linuxpractical:~/.ssh# ls
+authorized_keys  id_ed25519  id_ed25519.pub
+root@linuxpractical:~/.ssh# pwd
+/root/.ssh
+root@linuxpractical:~/.ssh# cat id_ed25519
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+QyNTUxOQAAACCaBJedxDdY+gZPq4eZHb5aBsuvmHo8tpUTEzPtTJ0aPQAAAJiSvQ6akr0O
+mgAAAAtzc2gtZWQyNTUxOQAAACCaBJedxDdY+gZPq4eZHb5aBsuvmHo8tpUTEzPtTJ0aPQ
+AAAEAwxgfgILy+d4wHQc+pi/fEaj+/ywO5eOiqxfnjbGtI3JoEl53EN1j6Bk+rh5kdvloG
+y6+Yejy2lRMTM+1MnRo9AAAAE3Jvb3RAbGludXhwcmFjdGljYWwBAg==
+-----END OPENSSH PRIVATE KEY-----
+root@linuxpractical:~/.ssh# cat id_ed25519.pub 
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJoEl53EN1j6Bk+rh5kdvloGy6+Yejy2lRMTM+1MnRo9 root@linuxpractical
+root@linuxpractical:~/.ssh# 
+root@linuxpractical:~/.ssh# vi prasanna
+root@linuxpractical:~/.ssh# head -5 prasanna
+Crack High Package Jobs
+With CloudDevOpsHub
+Transform your career in just 55 days with 100% live, interactive sessions. Master AWS + Azure + GCP + DevOps + AI and land 15-40+ LPA roles at top MNCs.
+
+Join Current + Next Batch
+root@linuxpractical:~/.ssh# tail -5 prasanna
+Batches Completed
+6000+
+Happy Learners
+75K+
+Community Members
+root@linuxpractical:~/.ssh# 

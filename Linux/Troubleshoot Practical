@@ -1,5 +1,10 @@
 lakshmiprasannamuppuri4@troubleshootpractical:~$ sudo -i
 root@troubleshootpractical:~# cd /var/log
+root@troubleshootpractical:/var/log# ls
+README            apt       chrony                 dist-upgrade  google-cloud-ops-agent  landscape  private  unattended-upgrades
+alternatives.log  auth.log  cloud-init-output.log  dmesg         journal                 lastlog    syslog   wtmp
+apport.log        btmp      cloud-init.log         dpkg.log      kern.log                nginx      sysstat
+root@troubleshootpractical:/var/log#
 root@troubleshootpractical:/var/log# cat /var/log/syslog
 2026-01-02T02:43:54.053644+00:00 troubleshootpractical systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
 2026-01-02T02:43:54.061305+00:00 troubleshootpractical systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
@@ -1463,6 +1468,11 @@ root@troubleshootpractical:/var/log# cat /var/log/syslog
 2026-01-02T02:45:47.608575+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
 2026-01-02T02:45:47.608620+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
 2026-01-02T02:45:47.608671+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
 root@troubleshootpractical:/var/log# tail -10 syslog
 2026-01-02T02:45:32.609393+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
 2026-01-02T02:45:32.609442+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
@@ -1474,6 +1484,11 @@ root@troubleshootpractical:/var/log# tail -10 syslog
 2026-01-02T02:45:47.608575+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
 2026-01-02T02:45:47.608620+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
 2026-01-02T02:45:47.608671+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
 root@troubleshootpractical:/var/log# head -10 syslog
 2026-01-02T02:43:54.053644+00:00 troubleshootpractical systemd[1]: Mounted dev-hugepages.mount - Huge Pages File System.
 2026-01-02T02:43:54.061305+00:00 troubleshootpractical systemd[1]: Mounted dev-mqueue.mount - POSIX Message Queue File System.
@@ -1485,6 +1500,57 @@ root@troubleshootpractical:/var/log# head -10 syslog
 2026-01-02T02:43:54.061365+00:00 troubleshootpractical systemd[1]: modprobe@configfs.service: Deactivated successfully.
 2026-01-02T02:43:54.061376+00:00 troubleshootpractical systemd[1]: Finished modprobe@configfs.service - Load Kernel Module configfs.
 2026-01-02T02:43:54.061383+00:00 troubleshootpractical systemd[1]: modprobe@dm_mod.service: Deactivated successfully.
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log# tail -f syslog
+2026-01-02T06:27:32.613215+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:32.613254+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:32.613340+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+2026-01-02T06:27:32.914380+00:00 troubleshootpractical otelopscol[1910]: 2026-01-02T06:27:32.913Z#011error#011internal/queue_sender.go:49#011Exporting failed. Dropping data.#011{"resource": {"service.instance.id": "079b9d75-ae13-472c-ac21-3461ebdf3f29", "service.name": "otelopscol", "service.version": "v0.138.0"}, "otelcol.component.id": "googlecloud", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "error": "failed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).", "dropped_items": 1}
+2026-01-02T06:27:32.914821+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewQueueSender.func1
+2026-01-02T06:27:32.914887+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue_sender.go:49
+2026-01-02T06:27:32.914925+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queuebatch.(*disabledBatcher[...]).Consume
+2026-01-02T06:27:32.914959+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:32.915002+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:32.915032+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+2026-01-02T06:27:46.110062+00:00 troubleshootpractical otelopscol[1910]: 2026-01-02T06:27:46.108Z#011error#011internal/queue_sender.go:49#011Exporting failed. Dropping data.#011{"resource": {"service.instance.id": "079b9d75-ae13-472c-ac21-3461ebdf3f29", "service.name": "otelopscol", "service.version": "v0.138.0"}, "otelcol.component.id": "googlecloud", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "error": "failed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).", "dropped_items": 4}
+2026-01-02T06:27:46.116982+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewQueueSender.func1
+2026-01-02T06:27:46.117103+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue_sender.go:49
+2026-01-02T06:27:46.117456+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queuebatch.(*disabledBatcher[...]).Consume
+2026-01-02T06:27:46.117535+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:46.117581+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:46.117622+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+2026-01-02T06:27:46.118175+00:00 troubleshootpractical otelopscol[1910]: 2026-01-02T06:27:46.110Z#011error#011internal/queue_sender.go:49#011Exporting failed. Dropping data.#011{"resource": {"service.instance.id": "079b9d75-ae13-472c-ac21-3461ebdf3f29", "service.name": "otelopscol", "service.version": "v0.138.0"}, "otelcol.component.id": "googlecloud", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "error": "failed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).", "dropped_items": 2}
+2026-01-02T06:27:46.118903+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewQueueSender.func1
+2026-01-02T06:27:46.119110+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue_sender.go:49
+2026-01-02T06:27:46.119365+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queuebatch.(*disabledBatcher[...]).Consume
+2026-01-02T06:27:46.119702+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:46.119752+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:46.119802+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+2026-01-02T06:27:46.119978+00:00 troubleshootpractical otelopscol[1910]: 2026-01-02T06:27:46.111Z#011error#011internal/queue_sender.go:49#011Exporting failed. Dropping data.#011{"resource": {"service.instance.id": "079b9d75-ae13-472c-ac21-3461ebdf3f29", "service.name": "otelopscol", "service.version": "v0.138.0"}, "otelcol.component.id": "googlecloud", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "error": "failed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).", "dropped_items": 3}
+2026-01-02T06:27:46.120110+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewQueueSender.func1
+2026-01-02T06:27:46.120555+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue_sender.go:49
+2026-01-02T06:27:46.120641+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queuebatch.(*disabledBatcher[...]).Consume
+2026-01-02T06:27:46.120737+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:46.120776+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:46.120826+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+2026-01-02T06:27:47.611405+00:00 troubleshootpractical otelopscol[1910]: 2026-01-02T06:27:47.610Z#011error#011internal/queue_sender.go:49#011Exporting failed. Dropping data.#011{"resource": {"service.instance.id": "079b9d75-ae13-472c-ac21-3461ebdf3f29", "service.name": "otelopscol", "service.version": "v0.138.0"}, "otelcol.component.id": "googlecloud", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics", "error": "failed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).\nfailed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).\nfailed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).\nfailed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).\nfailed to export metrics to projects/project-9668e51c-df3a-4767-98d: rpc error: code = PermissionDenied desc = Permission monitoring.timeSeries.create denied (or the resource may not exist).", "dropped_items": 905}
+2026-01-02T06:27:47.611707+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal.NewQueueSender.func1
+2026-01-02T06:27:47.611873+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue_sender.go:49
+2026-01-02T06:27:47.611957+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queuebatch.(*disabledBatcher[...]).Consume
+2026-01-02T06:27:47.612028+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queuebatch/disabled_batcher.go:23
+2026-01-02T06:27:47.612067+00:00 troubleshootpractical otelopscol[1910]: go.opentelemetry.io/collector/exporter/exporterhelper/internal/queue.(*asyncQueue[...]).Start.func1
+2026-01-02T06:27:47.612108+00:00 troubleshootpractical otelopscol[1910]: #011/root/go/pkg/mod/go.opentelemetry.io/collector/exporter/exporterhelper@v0.138.0/internal/queue/async_queue.go:49
+
+^C
+root@troubleshootpractical:/var/log# 
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
+root@troubleshootpractical:/var/log#
 root@troubleshootpractical:/var/log# apt-get update
 Hit:1 https://packages.cloud.google.com/apt google-cloud-ops-agent-noble-2 InRelease
 Hit:2 http://security.ubuntu.com/ubuntu noble-security InRelease             
@@ -1583,6 +1649,59 @@ Linux 6.14.0-1021-gcp (troubleshootpractical)   01/02/26        _x86_64_        
 03:00:17        all      1.12      0.00      0.84      0.12      0.02     97.89
 03:10:03        all      1.19      0.00      0.91      0.13      0.05     97.72
 Average:        all      1.15      0.00      0.88      0.12      0.04     97.81
+root@troubleshootpractical:/var/log/nginx# sar
+Linux 6.14.0-1021-gcp (troubleshootpractical)   01/02/26        _x86_64_        (2 CPU)
+
+02:43:52     LINUX RESTART      (2 CPU)
+
+02:50:18        CPU     %user     %nice   %system   %iowait    %steal     %idle
+03:00:17        all      1.12      0.00      0.84      0.12      0.02     97.89
+03:10:03        all      1.19      0.00      0.91      0.13      0.05     97.72
+03:20:08        all      1.39      0.13      0.57      0.17      0.02     97.71
+03:30:18        all      1.31      0.00      0.47      0.07      0.04     98.11
+03:40:10        all      1.09      0.00      0.43      0.08      0.02     98.38
+03:50:08        all      1.19      0.00      0.44      0.08      0.03     98.25
+04:00:18        all      1.11      0.00      0.45      0.06      0.03     98.34
+04:10:01        all      1.13      0.00      0.45      0.08      0.03     98.31
+04:20:04        all      1.14      0.00      0.46      0.10      0.04     98.26
+04:30:09        all      1.15      0.00      0.46      0.07      0.04     98.29
+04:40:18        all      1.09      0.00      0.43      0.06      0.02     98.40
+04:50:10        all      1.13      0.00      0.44      0.07      0.02     98.34
+05:00:13        all      1.11      0.00      0.44      0.08      0.03     98.34
+05:10:06        all      1.17      0.00      0.47      0.06      0.03     98.27
+05:20:16        all      1.17      0.00      0.48      0.07      0.06     98.21
+05:30:03        all      1.14      0.00      0.46      0.06      0.03     98.31
+05:40:18        all      1.08      0.26      0.48      0.13      0.03     98.01
+05:50:18        all      1.16      0.00      0.83      0.15      0.03     97.83
+06:00:08        all      1.11      0.00      0.46      0.07      0.03     98.33
+06:10:18        all      1.10      0.00      0.44      0.07      0.04     98.35
+06:20:18        all      1.15      0.00      0.45      0.06      0.05     98.30
+06:30:15        all      1.24      0.00      0.52      0.11      0.06     98.08
+06:40:02        all      1.70      0.07      0.62      0.11      0.10     97.40
+06:50:18        all      1.16      0.00      0.48      0.07      0.04     98.25
+07:00:18        all      1.28      0.25      0.50      0.14      0.03     97.80
+Average:        all      1.18      0.03      0.52      0.09      0.04     98.14
+root@troubleshootpractical:/var/log/nginx# vmstat
+procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu
+ 1  0      0 2695384  17808 1012136    0    0    54   353  312    1  1  1 98  0  0  0
+root@troubleshootpractical:/var/log/nginx# mpstat
+Linux 6.14.0-1021-gcp (troubleshootpractical)   01/02/26        _x86_64_        (2 CPU)
+
+07:07:48     CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+07:07:48     all    1.35    0.05    0.52    0.13    0.00    0.06    0.04    0.00    0.00   97.86
+root@troubleshootpractical:/var/log/nginx# iostat
+Linux 6.14.0-1021-gcp (troubleshootpractical)   01/02/26        _x86_64_        (2 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           1.35    0.05    0.58    0.13    0.04   97.86
+
+Device             tps    kB_read/s    kB_wrtn/s    kB_dscd/s    kB_read    kB_wrtn    kB_dscd
+loop0             0.00         0.08         0.00         0.00       1225          0          0
+loop1             0.00         0.08         0.00         0.00       1216          0          0
+loop2             0.00         0.03         0.00         0.00        501          0          0
+loop3             0.00         0.00         0.00         0.00         14          0          0
+sda               7.90        54.27       365.96       603.00     860589    5803034    9561624
 root@troubleshootpractical:/var/log/nginx# 
 root@troubleshootpractical:/var/log/nginx# 
 root@troubleshootpractical:/var/log/nginx# 
@@ -1675,14 +1794,32 @@ Please specify device type with the -d option.
 
 Use smartctl -h to get a usage summary
 
-root@troubleshootpractical:/var/log/nginx# sudo smartctl -a dev/sda1
+root@troubleshootpractical:~#  sudo smartctl -a /dev/sda1
 smartctl 7.4 2023-08-01 r5530 [x86_64-linux-6.14.0-1021-gcp] (local build)
 Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
 
-dev/sda1: Unable to detect device type
-Please specify device type with the -d option.
+=== START OF INFORMATION SECTION ===
+Vendor:               Google
+Product:              PersistentDisk
+Revision:             1
+Compliance:           SPC-4
+User Capacity:        10,737,418,240 bytes [10.7 GB]
+Logical block size:   512 bytes
+Physical block size:  4096 bytes
+LB provisioning type: not reported [LBPME=1, LBPRZ=1]
+Rotation Rate:        Solid State Device
+Serial number:        
+Device type:          disk
+Local Time is:        Fri Jan  2 07:41:13 2026 UTC
+SMART support is:     Unavailable - device lacks SMART capability.
 
-Use smartctl -h to get a usage summary
+=== START OF READ SMART DATA SECTION ===
+Current Drive Temperature:     0 C
+Drive Trip Temperature:        0 C
+
+Error Counter logging not supported
+
+Device does not support Self Test logging
 
 root@troubleshootpractical:/var/log/nginx# lsblk
 NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
@@ -5612,6 +5749,16 @@ root        2592  0.0  0.1  11196  7120 ?        S    02:48   0:00 nginx: master
 www-data    2595  0.0  0.1  12884  5116 ?        S    02:48   0:00 nginx: worker process
 www-data    2596  0.0  0.1  12884  5156 ?        S    02:48   0:00 nginx: worker process
 root        4808  0.0  0.0   7076  2232 pts/0    S+   03:32   0:00 grep --color=auto nginx
+root@troubleshootpractical:~# ps -auf | grep java
+root       15579  0.0  0.0   7076  2228 pts/1    S+   07:49   0:00              \_ grep --color=auto java
+root@troubleshootpractical:~# ps -auf
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+lakshmi+   15171  0.0  0.1   9060  5456 pts/0    Ss   07:40   0:00 -bash
+root       15181  0.0  0.1  17148  7504 pts/0    S+   07:41   0:00  \_ su
+root       15182  0.0  0.0  17148  2580 pts/1    Ss   07:41   0:00     su
+root       15183  0.0  0.1   9060  5428 pts/1    S    07:41   0:00     -b
+root       15580  100  0.1  12620  5284 pts/1    R+   07:49   0:00     ps
+root        1035  0.0  0.0   6104  2108 tty1     Ss+  02:44   0:00 /sbin/
 root@troubleshootpractical:/var/log/nginx# systemctl restart nginx
 root@troubleshootpractical:/var/log/nginx# last reboot
 reboot   system boot  6.14.0-1021-gcp  Fri Jan  2 02:43   still running

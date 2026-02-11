@@ -1,0 +1,40 @@
+root@docker-5:~# history
+    1  sudo apt-get update &&  apt install docker.io -y
+    2  docker -v
+    3  docker run -it ubuntu
+    4  docker images
+    5  docker ps -a
+    6  docker start 30a1d7285f4b
+    7  docker ps 
+    8  docker images
+    9  docker commit 30a1d7285f4b prasannaimagepython
+   10  docker images
+   11  docker save prasannaimagepython > mybackup.tar
+   12  ls
+   13  docker inspect hungry_shockley
+   14  docker logs hungry_shockley
+   15  docker ps
+   16  docker logs -f hungry_shockley
+   17  docker stats
+   18  docker stats hungry_shockley
+   19  docker top hungry_shockley
+   20  docker logs hungry_shockley > logs.log
+   21  ls
+   22  cat logs.log 
+   23  docker network create docker-network
+   24  docker  network ls
+   25  docker run -d --name webapp --network mynetwork nginx
+   26  docker run -d --name webapp --networkdocker-network nginx
+   27  docker run -d --name webapp --network docker-network nginx
+   28  docker ps -a
+   29  docker run -it --name client1 --network docker-network busybox sh
+   30  docker system df
+   31  docker images
+   32  docker ps -a
+   33  docker system prune
+   34  docker system df
+   35  docker images prune -a
+   36  docker image prune -a
+   37  docker images
+   38  docker ps
+   39  history

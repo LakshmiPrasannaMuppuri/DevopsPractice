@@ -1,0 +1,30 @@
+       gcloud container clusters get-credentials cluster1 --region asia-east1 --project project-9668e51c-df3a-4767-98d
+    8  kubectl cluster-info
+    9  kubectl config get-contexts
+   10  kubectl get ns
+   11  kubectl create ns dev
+   12  kubectl get ns
+   13  mkdir batch-42
+   14  cd batch-42/
+   15  ls
+   16  vi qa.yaml
+   17  cat qa.yaml 
+   18  kubectl apply -f qa.yaml
+   19  cat qa.yaml 
+   20  vi qa.yaml
+   21  cat qa.yaml 
+   22  kubectl apply -f qa.yaml
+   23  kubectl get ns
+   24  kubectl run nginx --image=nginx:1.16
+   25  kubectl get pods
+   26  kubectl get po
+   27  kubectl get nodes
+   28  kubectl get services
+   29  kubectl run jenkins --image=jenkins/jenkins:lts
+   30  kubectl get pods
+   31  kubectl get services
+   32  cat /var/jenkins_home/secrets/initialAdminPassword
+   33  kubectl get pods -o wide
+   34  kubectl get pods
+   35  kubectl get nodes
+   36  history
